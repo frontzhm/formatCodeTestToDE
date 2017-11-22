@@ -3,12 +3,15 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // 每次运行命令的时候 先清除dist的其他文件
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack')
+
 module.exports = {
   // entry: './src/index.js',
   entry: {
     // 多入口文件
-    app: './src/index.js',
-    print: './src/print.js'
+    // app: './src/index.js',
+    // print: './src/print.js'
+    app: './src/index.js'
   },
   output: {
     // filename: 'bundle.js',
@@ -19,7 +22,11 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output management'
-    })
+    }),
+    // 这两个插件是webpack内置的 为HMR服务的
+    // NamedModulesPlugin更容易查看要修补(patch)的依赖
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   // 只在开发模式下使用
   // 为了更容易地追踪错误和警告，JavaScript 提供了 source map 功能
@@ -29,6 +36,8 @@ module.exports = {
   // 告诉开发服务器,在哪里找文件
   // 在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    // 启用热模块替换HMR功能实际上就是更新 webpack-dev-server 的配置，和使用 webpack 内置的 HMR 插件。
+    hot: true
   }
 }
