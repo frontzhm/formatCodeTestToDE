@@ -12,6 +12,11 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      // file-loader让js文件能引入img,import myImg from './icon.png', 这样在css里或html里写后面路径会自动转化成最终路径
+      {
+        test: /\.png|jpg|gif|svg/,
+        use: 'file-loader'
       }
     ]
   }
