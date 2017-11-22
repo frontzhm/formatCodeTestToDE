@@ -24,5 +24,11 @@ module.exports = {
   // 只在开发模式下使用
   // 为了更容易地追踪错误和警告，JavaScript 提供了 source map 功能
   // ，将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
+  // 自动启动浏览器刷新,
+  // 告诉开发服务器,在哪里找文件
+  // 在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
+  devServer: {
+    contentBase: './dist'
+  }
 }
