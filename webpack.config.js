@@ -21,5 +21,8 @@ module.exports = {
       title: 'Output management'
     })
   ],
+  // 只在开发模式下使用
+  // 为了更容易地追踪错误和警告，JavaScript 提供了 source map 功能
+  // ，将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。
   devtool: 'inline-source-map'
 }
