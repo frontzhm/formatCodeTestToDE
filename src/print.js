@@ -1,3 +1,3 @@
 export default function print () {
-  console.log('i get called from print js')
+  consoe.log('i get called from print js')
 }

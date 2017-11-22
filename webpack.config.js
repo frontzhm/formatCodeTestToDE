@@ -20,5 +20,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Output management'
     })
-  ]
+  ],
+  devtool: 'inline-source-map'
 }
