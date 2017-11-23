@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // 每次运行命令的时候 先清除dist的其他文件
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 // 打包代码的时候删除 未被引用的代码 俗称 tree shaking
-// 你可以将应用程序想象成一棵树。绿色表示实际用到的源码和 library，是树上活的树叶。灰色表示无用的代码，是秋天树上枯萎的树叶。为了除去死去的树叶，你必须摇动这棵树，使它们落下。
+// 你可以将应用程序想象成一棵树。绿色表示实际用到的源码和 library，是树上活的树叶。灰色表示无用的代码，是秋天树上枯萎的树叶。
+// 为了除去死去的树叶，你必须摇动这棵树，使它们落下。
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-const webpack = require('webpack')
+// const webpack = require('webpack')
 
 module.exports = {
   // entry: './src/index.js',
