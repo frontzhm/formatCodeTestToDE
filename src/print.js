@@ -1,3 +1,3 @@
 export default function print () {
-  console.log('U uuu..')
+  console.log('print..')
 }

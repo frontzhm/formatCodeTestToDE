@@ -1,11 +1,10 @@
-// import _ from 'lodash'
-
 import print from './print'
 import {cube} from './math'
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!')
 }
 console.log(process.env.NODE_ENV)
+print()
 function component () {
   // var element = document.createElement('div')
 
