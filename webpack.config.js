@@ -7,13 +7,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-  // entry: './src/index.js',
-  entry: {
-    // 多入口文件
-    app: './src/index.js',
-    print: './src/print.js'
-    // app: './src/index.js'
-  },
+  entry: './src/index.js',
+  // entry: {
+  //   // 多入口文件
+  //   app: './src/index.js',
+  //   // print: './src/print.js'
+  //   // app: './src/index.js'
+  // },
   output: {
     // filename: 'bundle.js',
     filename: '[name].bundle.js',
@@ -25,8 +25,8 @@ module.exports = {
       title: 'Output management'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common', // 指定公共 bundle 的名称。
-      filename: 's.js'
+      name: 'common' // 指定公共 bundle 的名称。
+      // filename: 's.js'
     })
     // 这两个插件是webpack内置的 为HMR服务的
     // NamedModulesPlugin更容易查看要修补(patch)的依赖
