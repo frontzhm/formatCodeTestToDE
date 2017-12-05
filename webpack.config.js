@@ -11,8 +11,10 @@ module.exports = {
     index: './src/index.js'
   },
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    // filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
+    // 懒加载的时候使用 也称动态加载
+    // chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [

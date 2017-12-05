@@ -22,15 +22,14 @@
 // }
 // getComponent().then(component=>document.body.appendChild(component))
 
+// function component(){}
+// var btn = document.createElement('button')
+// btn.innerHTML = 'click view control'
+// btn.onclick = () => {
+//   // import(/* webpackChunkName: "print "*/'./print').then(module => {
+//   import(/* webpackChunkName: "print" */'./print').then(module => {
+//     module.default()
 
-var btn = document.createElement('button')
-btn.innerHTML = 'click view control'
-btn.onclick = () => {
-  import(/* webpackChunkname:print */'./print').then(module => {
-    module.default()
-
-  })
-}
-document.body.appendChild(btn)
-
-
+//   })
+// }
+// document.body.appendChild(btn)
