@@ -23,13 +23,11 @@
 // getComponent().then(component=>document.body.appendChild(component))
 
 // function component(){}
-// var btn = document.createElement('button')
-// btn.innerHTML = 'click view control'
-// btn.onclick = () => {
-//   // import(/* webpackChunkName: "print "*/'./print').then(module => {
-//   import(/* webpackChunkName: "print" */'./print').then(module => {
-//     module.default()
-
-//   })
-// }
-// document.body.appendChild(btn)
+// import print from './print'
+var btn = document.createElement('button')
+btn.innerHTML = 'click view control'
+btn.onclick = () => {
+  // print(0)
+  console.log('2')
+}
+document.body.appendChild(btn)

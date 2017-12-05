@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // 每次运行命令的时候 先清除dist的其他文件
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-// const webpack = require('webpack')
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    vendor: ['lodash']
   },
   output: {
     // filename: '[name].bundle.js',
@@ -20,12 +21,15 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Code spliting'
+      title: 'Caching'
+    }),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      // name: 'runtime'
+      name: ['vendor', 'runtime']
+      // names: ['common', 'runtime']
+      // chunks: ['math', 'print']
     })
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   names: ['common', 'runtime']
-    //   // chunks: ['math', 'print']
-    // })
     // 这两个插件是webpack内置的 为HMR服务的
     // NamedModulesPlugin更容易查看要修补(patch)的依赖
     // new webpack.NamedModulesPlugin(),
