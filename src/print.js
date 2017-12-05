@@ -1,4 +1,4 @@
-// import {cube} from './math'
+import {cube} from './math'
 export default function print () {
   console.log('print..')
 }
